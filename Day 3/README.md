@@ -13,4 +13,3 @@
 - return statement
 - function parameters
 - recursive functions
-- boolean retun values
