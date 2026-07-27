@@ -1,0 +1,11 @@
+Student Name: Hasti 
+Roll Number: 31 
+Course: AI and ML 
+Semester: 3 
+City: Mumbai 
+
+Student Name: Tinker  
+Roll Number: 34 
+Course: Data Science 
+Semester: 5 
+City: Dadar 

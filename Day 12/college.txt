@@ -1,0 +1,3 @@
+Name: Hasti 
+College: Elphi 
+Course: AI and ML 
