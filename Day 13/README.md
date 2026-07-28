@@ -49,5 +49,16 @@
   - Author
   - Price
 
+## Concepts Revised
+
+- A class is a blueprint used to create objects.
+- Objects are instances of classes.
+- Constructors initialize object data automatically.
+- Methods define object behavior.
+- `self` refers to the current object.
+- Multiple objects can be created from one class.
+- Objects can be stored and managed using lists.
+
 ## Outcome
-Today I learned the concept of storing multiple objects inside a list and revised the python oops.
+
+Today I revised the fundamentals of Object Oriented Programming in Python. I practiced creating classes, objects, constructors, and methods. I also learned how multiple objects can be stored inside lists, which is an important concept for building real-world applications like management systems.
