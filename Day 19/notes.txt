@@ -1,0 +1,9 @@
+Python is a programming language.
+
+It has many frameworks and libraries such as:
+- Django
+- Flask
+- FastAPI
+- Pandas
+- NumPy
+- TensorFlow
