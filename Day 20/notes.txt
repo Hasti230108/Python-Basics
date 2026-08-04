@@ -1,0 +1,55 @@
+1. What is Collections Module?
+
+A built-in Python module that provides advanced data structures such as Counter, defaultdict, deque, and namedtuple.
+
+2. Counter
+
+Used to count the frequency of elements.
+
+Where used:
+- Word counting
+- Character frequency
+- Voting systems
+- Data analysis
+
+3. defaultdict
+
+A dictionary that automatically creates a default value for missing keys.
+
+Where used:
+- Grouping data
+- Student records
+- Inventory systems
+
+4. deque
+
+A Double Ended Queue that allows insertion and deletion from both ends efficiently.
+
+Where used:
+- Browser history
+- Queue management
+- Undo/Redo systems
+
+5. namedtuple
+
+A tuple with named fields instead of index positions.
+
+Where used:
+- Employee records
+- Student details
+- Product information
+
+6. Advantages
+
+- Cleaner code
+- Better readability
+- Faster operations
+- Reduces extra code
+
+7. Where Used
+
+- Software Development
+- Data Analysis
+- Machine Learning
+- Web Development
+- Automation
