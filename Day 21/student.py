@@ -20,7 +20,7 @@ while True:
         course = input("Enter Course: ")
         city = input("Enter City: ")
         marks = int(input("Enter Marks: "))
-
+R
         duplicate = False
 
         for student in students:
