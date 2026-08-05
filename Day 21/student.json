@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Hasti",
+        "age": 19,
+        "roll_no": 31,
+        "course": "AI & ML",
+        "city": "Mumbai",
+        "marks": 95,
+        "grade": "O",
+        "result": "passed"
+    },
+    {
+        "name": "Tinker",
+        "age": "20",
+        "roll_no": 34,
+        "course": "Data Science",
+        "city": "Navi Mumbai",
+        "marks": 89,
+        "grade": "A",
+        "result": "passed"
+    }
+]
