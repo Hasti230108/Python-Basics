@@ -1,0 +1,21 @@
+import numpy as np
+
+marks = np.array([58, 98, 68, 64, 86, 92])
+
+print(f"Original: {marks}")
+print(f"Ascending: {np.sort(marks)}")
+print(f"Descending: {np.sort(marks)[::-1]}")
+print(f"Highest mark: {np.max(marks)}")
+print(f"Lowest mark: {np.min(marks)}")
+print(f"Position of highest marks: {np.argmax(marks)}")
+print(f"Position of lowest marks: {np.argmin(marks)}")
+print(f"Positions above 80: {np.where(marks > 80)}")
+print(f"Position of 64: {np.where(marks == 64)}")
+print(f"Sorting indices: {np.argsort(marks)}")
+print(f"Position of 92: {np.where(marks == 92)}")
+print(f"Positions below 70: {np.where(marks < 70)}")
+print(f"Second Highest Marks: {np.sort(marks)[-2]}")
+print(f"Positions >= 90: {np.where(marks >= 90)}")
+scores = np.array([45, 88, 72, 95, 61, 79])
+print(f"Score in Ascending: {np.sort(scores)}")
+print(f"Sorting scores indices: {np.argsort(scores)}")
