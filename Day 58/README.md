@@ -6,7 +6,7 @@ A simple User Login System built using Python.
 
 The project provides a GUI where users can submit their User ID and Password and verify whether the credentials already exist in the database.
 
-## Technologies Used
+## Library Used
 
 - Python
 - Tkinter
