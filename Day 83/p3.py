@@ -1,0 +1,10 @@
+my_list = [10, 20, 30, 40, 50]
+print("First element:", my_list[0])
+print("Last element:", my_list[-1])
+print("Slicing (1-4):", my_list[1:4])
+my_list.append(60)
+my_list.insert(4, 35)
+my_list.remove(30)
+print("After adding built-in methods:", my_list)
+my_list.sort(reverse=False)
+print("After Sorting:", my_list)
