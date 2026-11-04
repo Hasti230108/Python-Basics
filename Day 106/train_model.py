@@ -43,23 +43,23 @@ X_test_tfidf = vectorizer.transform(X_test)
 model = MultinomialNB()
 model.fit(X_train_tfidf, y_train)
 
-predictions = model.predict(X_test_tfidf)
+val_predictions = model.predict(X_val_tfidf)
 
-accuracy = accuracy_score(y_test, predictions)
+accuracy = accuracy_score(y_val, val_predictions)
 
 print("===== SPAMSHIELD MODEL RESULTS =====")
 print("Training messages:", len(X_train))
+print("Validation messages:", len(X_val))
 print("Testing messages:", len(X_test))
 print("Vocabulary size:", len(vectorizer.get_feature_names_out()))
 print("Accuracy:", round(accuracy * 100, 2), "%")
 
 print("\n===== CLASSIFICATION REPORT =====")
-print(classification_report(y_test, predictions))
+print(classification_report(y_val, val_predictions))
 
-predictions = model.predict(X_test_tfidf)
 cm = confusion_matrix(
-    y_test,
-    predictions,
+    y_val,
+    val_predictions,
     labels=["ham", "spam"]
 )
 
@@ -67,9 +67,9 @@ print("\n===== CONFUSION MATRIX =====")
 print(cm)
 
 results = pd.DataFrame({
-    "Message": X_test.values,
-    "Actual": y_test.values,
-    "Predicted": predictions
+    "Message": X_val.values,
+    "Actual": y_val.values,
+    "Predicted": val_predictions
 })
 
 mistakes = results[
@@ -89,11 +89,10 @@ print(
     mistakes[mistakes["Actual"] == "ham"].head(10)
 )
 
-
 spam_index = list(model.classes_).index("spam")
 
 spam_probabilities = model.predict_proba(
-    X_test_tfidf
+    X_val_tfidf
 )[:, spam_index]
 
 results["Spam Probability"] = spam_probabilities
