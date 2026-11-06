@@ -29,15 +29,31 @@ st.write(
     "or potentially spam using Machine Learning."
 )
 
+if not MODEL_PATH.exists():
+    st.error(
+        "Model file not found! "
+        "Run train_model.py first to create it."
+    )
+    st.stop()
+
+model, vectorizer = load_spamshield()
+
 # Message input
-message = st.text_area(
-    "Enter your SMS message:",
-    placeholder="Type or paste your message here...",
-    height=150
-)
+with st.form("spam_detection_form"):
+
+    message = st.text_area(
+        "Enter your SMS message:",
+        placeholder="Type or paste your message here...",
+        height=150
+    )
+
+    check_message = st.form_submit_button(
+        "🔍 Check Message",
+        width="stretch"
+    )
 
 # Prediction
-if st.button("🔍 Check Message", use_container_width=True):
+if check_message:
 
     if not message.strip():
         st.warning("Please enter a message first.")
