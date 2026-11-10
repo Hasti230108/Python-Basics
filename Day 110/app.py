@@ -67,5 +67,9 @@ if st.session_state.history:
 else:
     st.info("No calculations yet. Try calculating something!")
 
+if st.session_state.history:
+    if st.button("🗑️ Clear History"):
+        st.session_state.history.clear()
+        
 st.divider()
 st.caption("Built with Python & Streamlit | Day 109")
