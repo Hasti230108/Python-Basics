@@ -1,8 +1,8 @@
-# Day 111 — Export Calculation History as CSV
+# Day 112 — Advanced Calculator Operations
 
-Today, I upgraded my Streamlit Simple Calculator by adding a feature to **download calculation history as a CSV file**.
+Today, I continued upgrading my Streamlit Simple Calculator by adding advanced arithmetic operations and improving how calculation results are displayed.
 
-Users can now export their previous calculations and open them in spreadsheet applications such as Microsoft Excel or Google Sheets.
+The calculator now supports six operations, handles additional mathematical edge cases, and displays small decimal values in ordinary decimal notation.
 
 ## Features
 
@@ -10,32 +10,57 @@ Users can now export their previous calculations and open them in spreadsheet ap
 - Subtraction
 - Multiplication
 - Division
-- Division-by-zero handling
-- Calculation history using Streamlit Session State
+- Modulus — calculates the remainder
+- Power — calculates exponentiation
+- Handles division by zero
+- Handles modulus by zero
+- Handles zero raised to a negative power
+- Handles unsupported fractional powers of negative numbers
+- Maintains calculation history
 - Clear History button
 - Download calculation history as a CSV file
+- Displays small decimal values in ordinary notation
 
 ## Concepts Learned
 
-- Importing Python's `csv` module
-- Using `io.StringIO()` to create an in-memory text file
-- Creating CSV files with `csv.DictWriter()`
-- Writing column headings using `writeheader()`
-- Writing multiple records using `writerows()`
-- Retrieving CSV content using `getvalue()`
-- Using Streamlit's `st.download_button()`
-- Understanding CSV MIME types
+- Using the modulus operator `%`
+- Using the exponentiation operator `**`
+- Handling mathematical edge cases with conditional statements
+- Checking whether a number is an integer using `.is_integer()`
+- Formatting floating-point numbers
+- Using f-string precision with `.15f`
+- Removing unnecessary trailing zeros using `.rstrip()`
+- Reusing code through a custom function
+- Updating calculation history with formatted results
 
-## How CSV Export Works
+## Number Formatting
 
-1. Calculation history is stored in `st.session_state.history`.
-2. `io.StringIO()` creates a temporary file in memory.
-3. `csv.DictWriter()` converts the calculation dictionaries into CSV format.
-4. `st.download_button()` allows users to download the generated file.
+I created a custom function to display numbers with up to 15 decimal places while removing unnecessary trailing zeros.
 
-**Downloaded file:** `calculation_history.csv`
+```python
+def format_number(value):
+    return f"{value:.15f}".rstrip("0").rstrip(".")
+```
 
-**Note:** The CSV is downloaded through the browser. Its save location depends on the browser's download settings. Calculation history is temporary and is not permanently stored by the application.
+For example:
+
+| Original display | Formatted display |
+|---|---|
+| `1.31687e-06` | `0.00000131687` |
+| `2.500000` | `2.5` |
+| `8.000000` | `8` |
+
+*Note: The formatter rounds values to a maximum of 15 decimal places.*
+
+## Test Cases
+
+| Calculation | Expected result |
+|---|---:|
+| 10 % 3 | 1 |
+| 2 ** 3 | 8 |
+| 15 ** -5 | 0.00000131687 |
+| 10 / 4 | 2.5 |
+| 0 ** -1 | Error message |
 
 ## Technologies Used
 
@@ -46,10 +71,12 @@ Users can now export their previous calculations and open them in spreadsheet ap
 
 ## Key Takeaways
 
-I learned how to convert Python dictionaries into CSV records and provide downloadable files directly through a Streamlit application.
+I learned how to extend a basic calculator with additional mathematical operations and handle special cases using conditional statements.
 
-I also understood the difference between temporarily storing data in memory and downloading it as a separate file.
+I also learned how to create reusable formatting functions to make numerical results easier to read.
+
+This project helped me practice Python functions, operators, error handling, Streamlit widgets, Session State, and CSV file generation.
 
 ---
 
-Successfully implemented CSV export functionality for the calculator's calculation history.
+Successfully upgraded the Simple Calculator with Modulus, Power, improved decimal formatting, and additional error handling.

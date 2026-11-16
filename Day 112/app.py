@@ -2,6 +2,9 @@ import streamlit as st
 import csv
 import io
 
+def format_number(value):
+    return f"{value:.15f}".rstrip("0").rstrip(".")
+
 st.set_page_config(
     page_title="Simple Calculator",
     page_icon="🧮",
@@ -66,7 +69,7 @@ if st.button("Calculate", use_container_width=True):
 
         result = num1 ** num2
 
-    st.success(f"Result: {result:g}")
+    st.success(f"Result: {format_number(result)}")
     st.session_state.history.append({
         "num1": num1,
         "num2": num2,
@@ -80,9 +83,9 @@ st.subheader("📜 Calculation History")
 if st.session_state.history:
     for index, item in enumerate(reversed(st.session_state.history), start=1):
         st.write(
-            f"{index}. {item['num1']:g} "
+            f"{index}. {format_number(item['num1'])} "
             f"{item['operation']} "
-            f"{item['num2']:g} = {item['result']:g}"
+            f"{format_number(item['num2'])} = {format_number(item['result'])}"
         )
 else:
     st.info("No calculations yet. Try calculating something!")
